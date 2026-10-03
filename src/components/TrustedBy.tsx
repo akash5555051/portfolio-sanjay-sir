@@ -22,7 +22,7 @@ const sectors = [
 
 export const TrustedBy: React.FC = () => {
   return (
-    <section className="py-10 sm:py-12 bg-white border-t border-slate-100">
+    <section className="py-10 sm:py-14 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         
         {/* Eyebrow Heading */}
@@ -37,14 +37,15 @@ export const TrustedBy: React.FC = () => {
             return (
               <motion.div
                 key={item.name}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.04 }}
-                className="flex items-center sm:flex-col sm:justify-center p-2.5 sm:p-3 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 hover:text-[#0A2540] group cursor-default space-x-2.5 sm:space-x-0"
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                whileHover={{ y: -3 }}
+                className="flex items-center sm:flex-col sm:justify-center p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all text-slate-700 hover:text-[#0A2540] group cursor-default space-x-2.5 sm:space-x-0"
               >
-                <Icon className="w-5 h-5 sm:w-6 sm:h-6 sm:mb-2 text-slate-500 group-hover:text-[#E31E24] transition-colors shrink-0" />
-                <span className="text-xs font-bold leading-tight text-slate-800 text-left sm:text-center">
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 sm:mb-2 text-slate-400 group-hover:text-[#E31E24] group-hover:scale-110 transition-all duration-200 shrink-0" />
+                <span className="text-xs font-bold leading-tight text-slate-700 group-hover:text-[#0A2540] transition-colors text-left sm:text-center">
                   {item.name}
                 </span>
               </motion.div>
@@ -56,3 +57,5 @@ export const TrustedBy: React.FC = () => {
     </section>
   );
 };
+
+export default TrustedBy;

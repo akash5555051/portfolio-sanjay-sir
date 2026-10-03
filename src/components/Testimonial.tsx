@@ -24,14 +24,14 @@ export const Testimonial: React.FC = () => {
   const current = TESTIMONIALS[currentIndex];
 
   return (
-    <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative min-h-[290px] shadow-2xs">
+    <div className="bg-[#FAFBFD] border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative min-h-[300px] shadow-xs hover:shadow-md transition-shadow duration-300 text-left">
       <AnimatePresence mode="wait">
         <motion.div
           key={current.id}
-          initial={{ opacity: 0, x: 15 }}
+          initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -15 }}
-          transition={{ duration: 0.35 }}
+          exit={{ opacity: 0, x: -12 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
           className="space-y-4"
         >
           {/* Avatar and Quote Icon */}
@@ -39,25 +39,24 @@ export const Testimonial: React.FC = () => {
             <img
               src={current.avatar}
               alt={current.name}
-              className="w-13 h-13 rounded-full object-cover border-2 border-white shadow-xs shrink-0"
+              className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-xs shrink-0 select-none"
               onError={(e) => {
-                // fallback to a clean SVG placeholder if needed
-                (e.target as HTMLElement).style.display = 'none';
+                (e.target as HTMLImageElement).src = "/images/testimonial-dr-amit-clean.jpg";
               }}
             />
-            <div className="text-3xl text-slate-300 font-serif leading-none select-none">
+            <div className="text-3xl sm:text-4xl text-slate-300 font-serif leading-none select-none pt-1">
               “
             </div>
           </div>
 
           {/* Testimonial Quote */}
-          <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed text-left">
+          <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
             {current.quote}
           </p>
 
           {/* Author Name & Role */}
-          <div className="text-left pt-1">
-            <h4 className="text-sm font-bold text-[#0A2540]">
+          <div className="pt-1">
+            <h4 className="text-sm sm:text-base font-bold text-[#0A2540]">
               {current.name}
             </h4>
             <p className="text-xs text-slate-500 font-medium">
@@ -72,20 +71,22 @@ export const Testimonial: React.FC = () => {
         {/* Previous Button */}
         <button
           onClick={prevSlide}
-          className="w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0A2540] hover:bg-slate-50 shadow-2xs transition-colors cursor-pointer"
+          className="w-8 h-8 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-[#0A2540] hover:bg-slate-50 hover:shadow-xs transition-all cursor-pointer active:scale-95"
           aria-label="Previous Testimonial"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
 
         {/* Carousel Dots */}
-        <div className="flex items-center space-x-1.5">
+        <div className="flex items-center space-x-2">
           {TESTIMONIALS.map((t, idx) => (
             <button
               key={t.id}
               onClick={() => setCurrentIndex(idx)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                idx === currentIndex ? "w-5 bg-[#E31E24]" : "w-1.5 bg-slate-300 hover:bg-slate-400"
+              className={`rounded-full transition-all duration-300 cursor-pointer ${
+                idx === currentIndex
+                  ? "w-6 h-1.5 bg-[#E31E24]"
+                  : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -95,7 +96,7 @@ export const Testimonial: React.FC = () => {
         {/* Next Button */}
         <button
           onClick={nextSlide}
-          className="w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0A2540] hover:bg-slate-50 shadow-2xs transition-colors cursor-pointer"
+          className="w-8 h-8 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-[#0A2540] hover:bg-slate-50 hover:shadow-xs transition-all cursor-pointer active:scale-95"
           aria-label="Next Testimonial"
         >
           <ChevronRight className="w-4 h-4" />
@@ -104,3 +105,5 @@ export const Testimonial: React.FC = () => {
     </div>
   );
 };
+
+export default Testimonial;
