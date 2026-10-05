@@ -45,9 +45,10 @@ interface ServiceCardProps {
   service: ServiceItem;
   index: number;
   onSelect: (service: ServiceItem) => void;
+  className?: string;
 }
 
-export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, onSelect }) => {
+export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, onSelect, className = "" }) => {
   const IconComp = iconMap[service.iconName] || BarChart3;
   const theme = themeStyles[service.colorTheme] || themeStyles.pink;
 
@@ -59,7 +60,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, onSele
       transition={{ duration: 0.45, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
       onClick={() => onSelect(service)}
-      className={`group relative p-6 sm:p-7 rounded-2xl ${theme.bg} border ${theme.border} hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between text-left`}
+      className={`group relative p-6 sm:p-7 rounded-2xl ${theme.bg} border ${theme.border} hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between text-left ${className}`}
     >
       <div className="space-y-4">
         {/* Prominent Colored Icon */}

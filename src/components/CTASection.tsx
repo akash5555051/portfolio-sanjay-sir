@@ -17,9 +17,9 @@ export const CTASection: React.FC<CTASectionProps> = ({ onOpenConsultation }) =>
       {/* Background Graphic Illustration Overlay (Ultra-HD Mountain Ascent) */}
       <div className="absolute right-0 top-0 bottom-0 w-[50%] pointer-events-none opacity-40 sm:opacity-50 transition-opacity duration-300 group-hover:opacity-65">
         <img
-          src="/images/cta-mountain-growth-ultra-hd.jpg"
+          src="./images/cta-mountain-growth-ultra-hd.jpg"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = "/images/cta-mountain-growth.jpg";
+            (e.target as HTMLImageElement).src = "./images/cta-mountain-growth.jpg";
           }}
           alt="Business Growth Mountain Ascent"
           className="w-full h-full object-cover object-center mix-blend-screen select-none"

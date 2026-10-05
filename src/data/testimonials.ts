@@ -14,7 +14,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: "Dr. Amit Verma",
     role: "Director",
     company: "Healthcare Group",
-    avatar: "/images/testimonial-dr-amit-ultra-hd.jpg"
+    avatar: "./images/testimonial-dr-amit-ultra-hd.jpg"
   },
   {
     id: "t2",

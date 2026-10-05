@@ -41,7 +41,7 @@ export const Testimonial: React.FC = () => {
               alt={current.name}
               className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-xs shrink-0 select-none"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = "/images/testimonial-dr-amit-clean.jpg";
+                (e.target as HTMLImageElement).src = "./images/testimonial-dr-amit-clean.jpg";
               }}
             />
             <div className="text-3xl sm:text-4xl text-slate-300 font-serif leading-none select-none pt-1">
