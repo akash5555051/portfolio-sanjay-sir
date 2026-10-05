@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { TESTIMONIALS } from "@/data/testimonials";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Testimonial: React.FC = () => {
@@ -93,14 +94,24 @@ export const Testimonial: React.FC = () => {
           ))}
         </div>
 
-        {/* Next Button */}
-        <button
-          onClick={nextSlide}
-          className="w-8 h-8 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-[#0A2540] hover:bg-slate-50 hover:shadow-xs transition-all cursor-pointer active:scale-95"
-          aria-label="Next Testimonial"
-        >
-          <ChevronRight className="w-4 h-4" />
-        </button>
+        {/* Next Button & Case Studies Link */}
+        <div className="flex items-center space-x-3">
+          <Link
+            to="/case-studies"
+            className="text-xs font-bold text-[#1677FF] hover:text-[#0A2540] inline-flex items-center gap-1 transition-colors"
+          >
+            <span>Case Studies</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+
+          <button
+            onClick={nextSlide}
+            className="w-8 h-8 rounded-full bg-white border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-[#0A2540] hover:bg-slate-50 hover:shadow-xs transition-all cursor-pointer active:scale-95"
+            aria-label="Next Testimonial"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );
