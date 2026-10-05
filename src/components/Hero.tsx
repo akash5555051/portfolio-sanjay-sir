@@ -71,21 +71,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" />
               </button>
 
-              <div className="flex items-center justify-between sm:justify-start gap-3 w-full sm:w-auto">
-                {/* Secondary White Button */}
+              <div className="flex flex-wrap items-center justify-between sm:justify-start gap-3 w-full sm:w-auto">
+                {/* Secondary White Button: View My Experience */}
                 <Link
-                  to="/expertise"
+                  to="/experience"
                   className="flex-1 sm:flex-initial inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-xl bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs"
                 >
-                  <span>Explore My Expertise</span>
+                  <span>View My Experience</span>
                 </Link>
 
-                {/* Link: View BizTechX */}
+                {/* Link: Explore Expertise */}
                 <Link
-                  to="/about"
+                  to="/expertise"
                   className="inline-flex items-center text-[#0A2540] hover:text-[#E31E24] font-semibold text-sm px-2 py-2 group transition-colors shrink-0"
                 >
-                  <span>View BizTechX</span>
+                  <span>Explore Expertise</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
                 </Link>
               </div>
