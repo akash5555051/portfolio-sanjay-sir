@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Cross,
   Settings,
@@ -7,6 +8,7 @@ import {
   Factory,
   GraduationCap,
   Box,
+  ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -51,6 +53,17 @@ export const TrustedBy: React.FC = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Link to Insights */}
+        <div className="pt-3 text-center">
+          <Link
+            to="/insights"
+            className="inline-flex items-center text-xs sm:text-sm font-bold text-[#1677FF] hover:text-[#0A2540] transition-colors group"
+          >
+            <span>Explore Sanjay's Latest Growth & Technology Insights</span>
+            <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
+          </Link>
         </div>
 
       </div>
