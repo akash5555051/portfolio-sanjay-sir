@@ -203,68 +203,46 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
     <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
-          1. HERO SECTION: 1:1 Exact Match to Mockup Design
+          1. HERO SECTION: 1:1 Unified Master Banner (Zero Gap / Exactly as in Mockup)
           ======================================================== */}
-      <section className="relative overflow-hidden bg-white pt-6 pb-6 sm:pt-10 sm:pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
-            
-            {/* Left Column: 4-Color Accent, Tag, Heading, Subtext, Buttons */}
-            <div className="lg:col-span-6 text-left">
-              {/* 4-Color Horizontal Accent Line */}
-              <div className="flex items-center h-1.5 w-24 sm:w-28 rounded-full overflow-hidden mb-6">
-                <span className="h-full w-1/4 bg-[#E31E24]" />
-                <span className="h-full w-1/4 bg-[#22C55E]" />
-                <span className="h-full w-1/4 bg-[#1677FF]" />
-                <span className="h-full w-1/4 bg-[#F59E0B]" />
-              </div>
+      <section className="relative overflow-hidden bg-white pt-2 sm:pt-4 pb-0">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="relative w-full rounded-2xl overflow-hidden select-none shadow-xs border border-slate-100/60 bg-white">
+            {/* The Master Crisp 2K Banner Image */}
+            <img
+              src="./images/experience-hero-master-banner-clean.png"
+              alt="Experience that Drives Real Impact - Sanjay Kumar"
+              className="w-full h-auto block select-none"
+              loading="eager"
+            />
 
-              {/* Tag */}
-              <span className="text-xs font-bold tracking-[0.22em] text-slate-500 uppercase block mb-3.5">
-                MY JOURNEY
-              </span>
+            {/* Interactive Clickable Hotspot Button: Download Resume */}
+            <button
+              onClick={handleDownloadResume}
+              title="Download Resume"
+              aria-label="Download Resume"
+              style={{
+                left: "5.02%",
+                top: "68.61%",
+                width: "15.45%",
+                height: "11.65%",
+              }}
+              className="absolute cursor-pointer rounded-lg hover:ring-2 hover:ring-red-500 hover:ring-offset-1 hover:bg-white/10 transition-all active:scale-95"
+            />
 
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
-                Experience that <br />
-                <span className="text-[#0A2540]">Drives </span>
-                <span className="text-[#E31E24]">Real Impact</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-lg mb-8">
-                A journey of continuous learning, practical execution and a deep passion for helping businesses grow through technology, marketing and innovation.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5">
-                <button
-                  onClick={handleDownloadResume}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer group"
-                >
-                  <span>Download Resume</span>
-                  <Download className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
-                </button>
-
-                <button
-                  onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors cursor-pointer group shadow-2xs"
-                >
-                  <span>Let's Connect</span>
-                  <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column: Exact Visual Artwork (Handwriting + Sanjay in Office + Quote Card) */}
-            <div className="lg:col-span-6 flex items-end justify-center lg:justify-end">
-              <img
-                src="./images/experience-hero-right-hd.png"
-                alt="Sanjay Kumar - Experience that Drives Real Impact"
-                className="w-full h-auto max-w-[620px] object-contain select-none"
-              />
-            </div>
-
+            {/* Interactive Clickable Hotspot Button: Let's Connect */}
+            <button
+              onClick={onOpenConsultation}
+              title="Let's Connect"
+              aria-label="Let's Connect"
+              style={{
+                left: "22.15%",
+                top: "68.28%",
+                width: "12.99%",
+                height: "12.30%",
+              }}
+              className="absolute cursor-pointer rounded-lg hover:ring-2 hover:ring-blue-500 hover:ring-offset-1 hover:bg-slate-900/5 transition-all active:scale-95"
+            />
           </div>
         </div>
       </section>
