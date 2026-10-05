@@ -203,38 +203,44 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
     <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
-          1. HERO SECTION: Exact Match to Mockup Design
+          1. HERO SECTION: 1:1 Exact Match to Mockup Design
           ======================================================== */}
-      <section className="relative overflow-hidden bg-white pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-white pt-6 pb-6 sm:pt-10 sm:pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
             
-            {/* Left Column: Heading, Subtext, Buttons */}
-            <div className="lg:col-span-5 text-left space-y-5">
-              {/* Tag */}
-              <div className="inline-flex items-center gap-2">
-                <span className="text-xs font-extrabold tracking-widest text-slate-500 uppercase">
-                  MY JOURNEY
-                </span>
+            {/* Left Column: 4-Color Accent, Tag, Heading, Subtext, Buttons */}
+            <div className="lg:col-span-6 text-left">
+              {/* 4-Color Horizontal Accent Line */}
+              <div className="flex items-center h-1.5 w-24 sm:w-28 rounded-full overflow-hidden mb-6">
+                <span className="h-full w-1/4 bg-[#E31E24]" />
+                <span className="h-full w-1/4 bg-[#22C55E]" />
+                <span className="h-full w-1/4 bg-[#1677FF]" />
+                <span className="h-full w-1/4 bg-[#F59E0B]" />
               </div>
 
+              {/* Tag */}
+              <span className="text-xs font-bold tracking-[0.22em] text-slate-500 uppercase block mb-3.5">
+                MY JOURNEY
+              </span>
+
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12]">
+              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
                 Experience that <br />
                 <span className="text-[#0A2540]">Drives </span>
                 <span className="text-[#E31E24]">Real Impact</span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-lg">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-lg mb-8">
                 A journey of continuous learning, practical execution and a deep passion for helping businesses grow through technology, marketing and innovation.
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-wrap items-center gap-3.5">
                 <button
                   onClick={handleDownloadResume}
-                  className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-all cursor-pointer group"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer group"
                 >
                   <span>Download Resume</span>
                   <Download className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
@@ -242,7 +248,7 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
 
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-all cursor-pointer group shadow-2xs"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors cursor-pointer group shadow-2xs"
                 >
                   <span>Let's Connect</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
@@ -250,65 +256,13 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
               </div>
             </div>
 
-            {/* Middle / Center: Handwriting Text & Sanjay Kumar Portrait */}
-            <div className="lg:col-span-4 relative flex items-center justify-center">
-              {/* Handwriting Words on Left of Photo */}
-              <div className="hidden sm:block absolute -left-6 sm:-left-10 top-6 z-10 select-none pointer-events-none rotate-[-6deg]">
-                <div className="font-handwriting text-2xl sm:text-3xl text-slate-600 font-bold leading-tight">
-                  <p>Learning</p>
-                  <p className="ml-1">Implementing</p>
-                  <p className="ml-2">Growing</p>
-                  <div className="relative inline-block ml-3">
-                    <span>Together</span>
-                    {/* Red curve stroke under Together */}
-                    <svg
-                      className="absolute -bottom-2 left-0 w-full h-3 text-[#E31E24]"
-                      viewBox="0 0 100 12"
-                      fill="none"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M2,8 Q50,1 98,7"
-                        stroke="#E31E24"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              {/* Sanjay Kumar Portrait */}
-              <div className="relative w-full max-w-[280px] sm:max-w-[320px] rounded-2xl overflow-hidden shadow-xs border border-slate-100 bg-slate-50">
-                <img
-                  src="./images/sanjay-kumar-hd.jpg"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "./images/sanjay-about-hd.jpg";
-                  }}
-                  alt="Sanjay Kumar - Business Technology & Growth Consultant"
-                  className="w-full h-auto object-cover object-top select-none"
-                  loading="eager"
-                />
-              </div>
-            </div>
-
-            {/* Right Column: Dark Blue Quote Card */}
-            <div className="lg:col-span-3 flex justify-center lg:justify-end">
-              <div className="bg-[#071F38] text-white rounded-2xl p-6 sm:p-7 shadow-xl border border-slate-800 text-left w-full max-w-[320px] flex flex-col justify-between">
-                <div>
-                  <div className="text-3xl sm:text-4xl text-white font-serif leading-none mb-3 select-none">
-                    “
-                  </div>
-                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
-                    Every role, project and client interaction has taught me something valuable — and fuels my passion to create better solutions for businesses.
-                  </p>
-                </div>
-                <div className="mt-5 text-right">
-                  <span className="text-xs sm:text-sm font-semibold text-slate-300">
-                    — Sanjay Kumar
-                  </span>
-                </div>
-              </div>
+            {/* Right Column: Exact Visual Artwork (Handwriting + Sanjay in Office + Quote Card) */}
+            <div className="lg:col-span-6 flex items-end justify-center lg:justify-end">
+              <img
+                src="./images/experience-hero-right-hd.png"
+                alt="Sanjay Kumar - Experience that Drives Real Impact"
+                className="w-full h-auto max-w-[620px] object-contain select-none"
+              />
             </div>
 
           </div>
@@ -316,26 +270,35 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
       </section>
 
       {/* ========================================================
-          2. HIGHLIGHTS & STATS BAR: 4 Columns
+          2. HIGHLIGHTS & STATS BAR: Clean 4 Columns with Dividers
           ======================================================== */}
-      <section className="bg-white border-b border-slate-200/80 py-8">
+      <section className="bg-white border-y border-slate-200/80 py-7">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
             {METRIC_HIGHLIGHTS.map((metric, idx) => {
               const IconComp = metric.icon;
               return (
                 <div
                   key={idx}
-                  className="flex items-start space-x-3.5 text-left p-2 rounded-xl hover:bg-slate-50 transition-colors"
+                  className={`flex items-start space-x-3.5 text-left py-2.5 sm:py-1 ${
+                    idx === 0
+                      ? "sm:pr-6"
+                      : idx === METRIC_HIGHLIGHTS.length - 1
+                      ? "sm:pl-6"
+                      : "sm:px-6"
+                  }`}
                 >
-                  <div className="w-11 h-11 rounded-lg border border-slate-200 flex items-center justify-center shrink-0 bg-white text-[#0A2540] shadow-2xs">
-                    <IconComp className="w-5 h-5 stroke-[1.8]" />
+                  {/* Clean Dark Navy Outline Icon */}
+                  <div className="text-[#0A2540] shrink-0 mt-0.5">
+                    <IconComp className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.65]" />
                   </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-extrabold text-[#0A2540] leading-snug">
+
+                  {/* Title & Subtitle */}
+                  <div className="space-y-0.5">
+                    <h3 className="text-lg sm:text-[19px] font-extrabold text-[#0A2540] leading-snug">
                       {metric.title}
                     </h3>
-                    <p className="text-xs text-slate-500 font-medium whitespace-pre-line leading-relaxed mt-0.5">
+                    <p className="text-xs sm:text-[13px] text-slate-500 font-medium whitespace-pre-line leading-snug">
                       {metric.subtitle}
                     </p>
                   </div>
