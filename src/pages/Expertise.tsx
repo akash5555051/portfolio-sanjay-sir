@@ -92,7 +92,7 @@ INDUSTRIES:
       {/* =========================================================================
           1. HERO SECTION: "MY EXPERTISE" (EXACT SCREENSHOT MATCH)
           ========================================================================= */}
-      <section className="pt-24 sm:pt-28 lg:pt-30 pb-0 bg-gradient-to-b from-[#FAFBFD] to-white border-b border-slate-100 overflow-hidden">
+      <section className="pt-28 sm:pt-32 lg:pt-32 pb-0 bg-gradient-to-b from-[#FAFBFD] to-white border-b border-slate-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-start">
             

@@ -10,7 +10,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
   return (
-    <section id="home" className="relative pt-26 pb-10 sm:pt-32 sm:pb-14 lg:pt-28 lg:pb-14 bg-[#FAFBFD] overflow-hidden border-b border-slate-100">
+    <section id="home" className="relative pt-28 pb-8 xs:pt-32 xs:pb-10 sm:pt-36 sm:pb-14 lg:pt-32 lg:pb-16 bg-[#FAFBFD] overflow-hidden border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[28px] xs:text-[34px] sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.18] sm:leading-[1.14]"
+              className="text-[26px] xs:text-[32px] sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.2] sm:leading-[1.14]"
             >
               Turning Ideas into{" "}
               <span className="text-[#E31E24] font-black inline-block transform hover:scale-105 transition-transform duration-200">
@@ -65,17 +65,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               {/* Primary Red Button */}
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#E31E24] text-white font-bold text-sm sm:text-base shadow-sm hover:bg-[#C8171D] hover:shadow-md transition-all active:scale-[0.98] cursor-pointer group"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-[#E31E24] text-white font-bold text-xs xs:text-sm sm:text-base shadow-sm hover:bg-[#C8171D] hover:shadow-md transition-all active:scale-[0.98] cursor-pointer group"
               >
                 <span>Let's Discuss Your Business</span>
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform shrink-0" />
               </button>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
                 {/* Secondary White Button: View My Experience */}
                 <Link
                   to="/experience"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-3 rounded-xl bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-white border border-slate-300 text-[#0A2540] font-semibold text-xs xs:text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs text-center"
                 >
                   <span>View My Experience</span>
                 </Link>
@@ -83,10 +83,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
                 {/* Link: Explore Expertise */}
                 <Link
                   to="/expertise"
-                  className="w-full sm:w-auto inline-flex items-center justify-center text-[#0A2540] hover:text-[#E31E24] font-semibold text-sm px-4 py-2.5 group transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center text-[#0A2540] hover:text-[#E31E24] font-semibold text-xs xs:text-sm px-3 py-2 group transition-colors text-center"
                 >
                   <span>Explore Expertise</span>
-                  <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform shrink-0" />
                 </Link>
               </div>
             </motion.div>
@@ -102,7 +102,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
             {/* ========================================================
                 A. MOBILE VIEW (< 1024px): Sleek, perfectly proportioned unified executive card
                 ======================================================== */}
-            <div className="lg:hidden relative mx-auto w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[420px]">
+            <div className="lg:hidden relative mx-auto w-full max-w-[280px] xs:max-w-[340px] sm:max-w-[420px]">
               {/* Card Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-b from-slate-50 to-slate-100/70 border border-slate-200/90">
                 {/* HD Portrait with controlled max-height for perfect mobile ratio */}

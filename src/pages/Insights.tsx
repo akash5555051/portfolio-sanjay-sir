@@ -405,7 +405,7 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
   };
 
   return (
-    <div className="pt-24 sm:pt-28 pb-16 bg-white min-h-screen text-slate-800">
+    <div className="pt-28 sm:pt-32 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
           1. HERO SECTION: 1:1 Match to Mockup Design

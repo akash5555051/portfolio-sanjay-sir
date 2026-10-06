@@ -28,7 +28,7 @@ export const About: React.FC<AboutProps> = ({ onOpenConsultation }) => {
       {/* =========================================================================
           1. HERO SECTION: ABOUT SANJAY KUMAR (EXACT SCREENSHOT MATCH)
           ========================================================================= */}
-      <section className="pt-24 sm:pt-26 lg:pt-28 pb-0 bg-white border-b border-slate-100 overflow-hidden">
+      <section className="pt-28 sm:pt-32 lg:pt-32 pb-0 bg-white border-b border-slate-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-start">
             

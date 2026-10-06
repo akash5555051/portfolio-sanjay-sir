@@ -4,7 +4,7 @@ import { ArrowLeft, FileText } from "lucide-react";
 
 export const TermsOfUse: React.FC = () => {
   return (
-    <div className="pt-24 sm:pt-28 pb-16">
+    <div className="pt-28 sm:pt-32 pb-16">
       <section className="bg-[#FAFBFD] py-12 sm:py-16 border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <Link

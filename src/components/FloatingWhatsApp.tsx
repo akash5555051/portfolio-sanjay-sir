@@ -3,7 +3,7 @@ import { PROFILE_DATA } from "@/data/portfolioData";
 
 export const FloatingWhatsApp: React.FC = () => {
   return (
-    <aside className="fixed bottom-6 right-6 z-50 flex items-center group select-none" aria-label="WhatsApp Support">
+    <aside className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center group select-none" aria-label="WhatsApp Support">
       
       {/* Floating Tooltip Label (Desktop Hover) */}
       <div className="hidden sm:flex items-center space-x-2 mr-3 px-3.5 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-full shadow-lg border border-slate-200/80 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-x-2 group-hover:translate-x-0">
@@ -16,7 +16,7 @@ export const FloatingWhatsApp: React.FC = () => {
         href={PROFILE_DATA.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+        className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
         aria-label="Chat with Sanjay Kumar on WhatsApp"
       >
         {/* Subtle Pulse Ring Animation */}
@@ -25,7 +25,7 @@ export const FloatingWhatsApp: React.FC = () => {
         {/* Official WhatsApp Logo SVG */}
         <svg
           viewBox="0 0 64 64"
-          className="w-8 h-8 fill-white drop-shadow-xs"
+          className="w-6 h-6 sm:w-8 sm:h-8 fill-white drop-shadow-xs"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
@@ -33,7 +33,7 @@ export const FloatingWhatsApp: React.FC = () => {
         </svg>
 
         {/* Small Online Green Indicator Badge */}
-        <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full" />
+        <span className="absolute top-0 right-0 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-emerald-400 border-2 border-white rounded-full" />
       </a>
     </aside>
   );
