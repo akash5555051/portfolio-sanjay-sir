@@ -12,6 +12,7 @@ import { Expertise } from "@/pages/Expertise";
 import { Experience } from "@/pages/Experience";
 import { CaseStudies } from "@/pages/CaseStudies";
 import { Insights } from "@/pages/Insights";
+import { Gallery } from "@/pages/Gallery";
 import { Contact } from "@/pages/Contact";
 import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsOfUse } from "@/pages/TermsOfUse";
@@ -56,6 +57,7 @@ export function App() {
             <Route path="/experience" element={<Experience onOpenConsultation={handleOpenConsultation} />} />
             <Route path="/case-studies" element={<CaseStudies onOpenConsultation={handleOpenConsultation} />} />
             <Route path="/insights" element={<Insights onOpenConsultation={handleOpenConsultation} />} />
+            <Route path="/gallery" element={<Gallery onOpenConsultation={handleOpenConsultation} />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-use" element={<TermsOfUse />} />

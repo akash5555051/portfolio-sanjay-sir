@@ -99,5 +99,6 @@ export const NAV_LINKS = [
   { label: "Experience", href: "/experience" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Insights", href: "/insights" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" }
 ];
