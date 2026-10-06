@@ -17,7 +17,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
   return (
-    <div className="relative">
+    <div className="relative w-full max-w-full overflow-x-hidden">
       {/* 1. Hero Section */}
       <Hero onOpenConsultation={onOpenConsultation} />
 

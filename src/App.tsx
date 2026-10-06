@@ -50,7 +50,7 @@ function MainLayout() {
       {!isAdmin && <Navbar onOpenConsultation={handleOpenConsultation} />}
 
       {/* Dynamic Route Content */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden min-w-0">
         <Routes>
           <Route path="/" element={<Home onOpenConsultation={handleOpenConsultation} />} />
           <Route path="/about" element={<About onOpenConsultation={handleOpenConsultation} />} />

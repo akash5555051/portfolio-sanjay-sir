@@ -1,53 +1,25 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PROCESS_STEPS } from "@/data/process";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Process: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Smooth scroll to a specific card
-  const scrollToStep = useCallback((index: number) => {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const targetCard = container.children[index] as HTMLElement;
-    if (targetCard) {
-      container.scrollTo({
-        left: targetCard.offsetLeft - container.offsetLeft,
-        behavior: "smooth",
-      });
-      setActiveIndex(index);
-    }
-  }, []);
-
   const handleNext = () => {
-    const next = (activeIndex + 1) % PROCESS_STEPS.length;
-    scrollToStep(next);
+    setActiveIndex((prev) => (prev + 1) % PROCESS_STEPS.length);
   };
 
   const handlePrev = () => {
-    const prev = (activeIndex - 1 + PROCESS_STEPS.length) % PROCESS_STEPS.length;
-    scrollToStep(prev);
+    setActiveIndex((prev) => (prev - 1 + PROCESS_STEPS.length) % PROCESS_STEPS.length);
   };
 
-  // Track active card on manual touch/scroll
-  const handleScroll = () => {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const scrollLeft = container.scrollLeft;
-    const containerWidth = container.offsetWidth || 1;
-    const calculatedIndex = Math.round(scrollLeft / containerWidth);
-    const clampedIndex = Math.max(0, Math.min(PROCESS_STEPS.length - 1, calculatedIndex));
-    if (clampedIndex !== activeIndex) {
-      setActiveIndex(clampedIndex);
-    }
-  };
+  const currentStep = PROCESS_STEPS[activeIndex];
 
   return (
-    <section id="process" className="py-12 sm:py-20 bg-[#FAFBFD] border-t border-slate-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="process" className="py-12 sm:py-20 bg-[#FAFBFD] border-t border-slate-100 overflow-hidden w-full max-w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full">
         
         {/* Header Row */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-14 space-y-3 sm:space-y-0 text-left">
@@ -100,59 +72,63 @@ export const Process: React.FC = () => {
         </div>
 
         {/* ========================================================
-            A. MOBILE VIEW (< md): 100% Full-Width Snapping Card (Zero Overflow)
+            A. MOBILE VIEW (< md): Single Active Step Card (ZERO Overflow)
             ======================================================== */}
-        <div className="md:hidden">
-          {/* Step Pill Selectors */}
-          <div className="flex items-center space-x-1.5 mb-3.5 overflow-x-auto scrollbar-none pb-1">
+        <div className="md:hidden w-full max-w-full">
+          {/* 5-Step Pill Selectors (Grid that fits 100% of mobile width, NO horizontal overflow) */}
+          <div className="grid grid-cols-5 gap-1.5 mb-3.5 w-full">
             {PROCESS_STEPS.map((item, idx) => (
               <button
                 key={item.step}
-                onClick={() => scrollToStep(idx)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold shrink-0 transition-all cursor-pointer ${
+                onClick={() => setActiveIndex(idx)}
+                className={`py-2 px-1 rounded-xl text-center flex flex-col items-center justify-center transition-all cursor-pointer border ${
                   activeIndex === idx
-                    ? "bg-[#0A2540] text-white shadow-xs"
-                    : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
+                    ? "bg-[#0A2540] text-white border-[#0A2540] shadow-xs ring-2 ring-[#0A2540]/10"
+                    : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
                 }`}
               >
-                {item.step} {item.title}
+                <span className="text-[10px] font-extrabold block leading-none mb-0.5">
+                  {item.step}
+                </span>
+                <span className="text-[9px] font-bold truncate max-w-full block leading-none">
+                  {item.title.split(" ")[0]}
+                </span>
               </button>
             ))}
           </div>
 
-          {/* Snapping Cards Container (w-full, NO negative margins) */}
-          <div
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3 pb-2 pt-1"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {PROCESS_STEPS.map((item, idx) => (
-              <div
-                key={item.step}
-                className="w-full shrink-0 snap-center rounded-2xl p-5 bg-white border border-slate-200 shadow-xs flex flex-col justify-between text-left"
+          {/* Active Card Container (Takes 100% width, zero off-screen elements) */}
+          <div className="w-full relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStep.step}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25 }}
+                className="w-full rounded-2xl p-5 bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between text-left"
               >
                 <div>
                   {/* Card Header: Step Badge & Indicator */}
                   <div className="flex items-center justify-between mb-3.5">
                     <div
-                      className={`w-9 h-9 rounded-full ${item.badgeBg} text-white flex items-center justify-center text-xs font-extrabold shadow-xs`}
+                      className={`w-9 h-9 rounded-full ${currentStep.badgeBg} text-white flex items-center justify-center text-xs font-extrabold shadow-xs`}
                     >
-                      {item.step}
+                      {currentStep.step}
                     </div>
                     <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                      Stage {item.step} of 05
+                      Stage {currentStep.step} of 05
                     </span>
                   </div>
 
                   {/* Step Title */}
                   <h3 className="text-base sm:text-lg font-bold text-[#0A2540] mb-2">
-                    {item.title}
+                    {currentStep.title}
                   </h3>
 
                   {/* Step Description */}
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    {item.desc}
+                    {currentStep.desc}
                   </p>
                 </div>
 
@@ -160,19 +136,19 @@ export const Process: React.FC = () => {
                 <div className="pt-3.5 mt-3.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-500">
                   <span className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    {idx < PROCESS_STEPS.length - 1
-                      ? `Next: ${PROCESS_STEPS[idx + 1].title}`
+                    {activeIndex < PROCESS_STEPS.length - 1
+                      ? `Next: ${PROCESS_STEPS[activeIndex + 1].title}`
                       : "Continuous Scale"}
                   </span>
                   <button
                     onClick={handleNext}
                     className="text-[#1677FF] font-bold hover:underline cursor-pointer"
                   >
-                    {idx < PROCESS_STEPS.length - 1 ? "Next Step →" : "Target Achieved ✓"}
+                    {activeIndex < PROCESS_STEPS.length - 1 ? "Next Step →" : "Target Achieved ✓"}
                   </button>
                 </div>
-              </div>
-            ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Mobile Bottom Controls: Step Counter & Pagination Dots */}
@@ -186,7 +162,7 @@ export const Process: React.FC = () => {
               {PROCESS_STEPS.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => scrollToStep(idx)}
+                  onClick={() => setActiveIndex(idx)}
                   aria-label={`Go to step ${idx + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                     activeIndex === idx
@@ -198,7 +174,7 @@ export const Process: React.FC = () => {
             </div>
 
             <span className="text-[11px] font-medium text-slate-400">
-              Swipe or tap steps
+              Tap steps or arrows
             </span>
           </div>
         </div>
@@ -206,7 +182,7 @@ export const Process: React.FC = () => {
         {/* ========================================================
             B. DESKTOP VIEW (>= md): Full 5-Step Side-by-Side Flow
             ======================================================== */}
-        <div className="hidden md:block relative">
+        <div className="hidden md:block relative w-full">
           <div className="grid md:grid-cols-5 gap-4 lg:gap-5 relative">
             {PROCESS_STEPS.map((item, idx) => (
               <motion.div

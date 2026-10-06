@@ -20,7 +20,7 @@ export const FloatingWhatsApp: React.FC = () => {
         aria-label="Chat with Sanjay Kumar on WhatsApp"
       >
         {/* Subtle Pulse Ring Animation */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping pointer-events-none -z-10" />
+        <span className="absolute -inset-1 rounded-full bg-[#25D366]/40 animate-pulse pointer-events-none -z-10" />
 
         {/* Official WhatsApp Logo SVG */}
         <svg
