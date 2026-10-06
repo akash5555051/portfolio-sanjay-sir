@@ -10,7 +10,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
   return (
-    <section id="home" className="relative pt-20 pb-8 sm:pt-24 sm:pb-12 lg:pt-24 lg:pb-14 bg-[#FAFBFD] overflow-hidden border-b border-slate-100">
+    <section id="home" className="relative pt-26 pb-10 sm:pt-32 sm:pb-14 lg:pt-28 lg:pb-14 bg-[#FAFBFD] overflow-hidden border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-[10px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-slate-500 uppercase"
+              className="text-[10px] sm:text-xs font-bold tracking-[0.12em] sm:tracking-[0.2em] text-slate-500 uppercase leading-relaxed break-words"
             >
               {PROFILE_DATA.tagline}
             </motion.div>
@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[30px] sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.14]"
+              className="text-[28px] xs:text-[34px] sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.18] sm:leading-[1.14]"
             >
               Turning Ideas into{" "}
               <span className="text-[#E31E24] font-black inline-block transform hover:scale-105 transition-transform duration-200">
@@ -50,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl font-normal leading-relaxed"
+              className="text-xs sm:text-base lg:text-lg text-slate-600 max-w-xl font-normal leading-relaxed"
             >
               {PROFILE_DATA.heroSubtext}
             </motion.p>
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="pt-2 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
+              className="pt-2 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full"
             >
               {/* Primary Red Button */}
               <button
@@ -71,11 +71,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" />
               </button>
 
-              <div className="flex flex-wrap items-center justify-between sm:justify-start gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
                 {/* Secondary White Button: View My Experience */}
                 <Link
                   to="/experience"
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-xl bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-3 rounded-xl bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 transition-all shadow-2xs"
                 >
                   <span>View My Experience</span>
                 </Link>
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
                 {/* Link: Explore Expertise */}
                 <Link
                   to="/expertise"
-                  className="inline-flex items-center text-[#0A2540] hover:text-[#E31E24] font-semibold text-sm px-2 py-2 group transition-colors shrink-0"
+                  className="w-full sm:w-auto inline-flex items-center justify-center text-[#0A2540] hover:text-[#E31E24] font-semibold text-sm px-4 py-2.5 group transition-colors"
                 >
                   <span>Explore Expertise</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1.5 transition-transform" />
@@ -102,7 +102,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
             {/* ========================================================
                 A. MOBILE VIEW (< 1024px): Sleek, perfectly proportioned unified executive card
                 ======================================================== */}
-            <div className="lg:hidden relative mx-auto w-full max-w-[340px] sm:max-w-[420px]">
+            <div className="lg:hidden relative mx-auto w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[420px]">
               {/* Card Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-b from-slate-50 to-slate-100/70 border border-slate-200/90">
                 {/* HD Portrait with controlled max-height for perfect mobile ratio */}

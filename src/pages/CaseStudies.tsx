@@ -391,12 +391,12 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
   const currentTestimonial = TESTIMONIALS_DATA[activeTestimonialIdx];
 
   return (
-    <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
+    <div className="pt-24 sm:pt-28 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
           1. HERO SECTION: 1:1 Match to Mockup Design
           ======================================================== */}
-      <section className="relative overflow-hidden bg-white pt-6 pb-8 sm:pt-10 sm:pb-12 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-white pt-4 pb-8 sm:pt-8 sm:pb-12 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
             
@@ -408,7 +408,7 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
               </span>
 
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
                 Real Businesses. <br />
                 <span className="text-[#E31E24]">Real Results.</span>
               </h1>
@@ -419,10 +419,10 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5">
+              <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer group"
                 >
                   <span>Discuss a Similar Project</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -430,7 +430,7 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
 
                 <button
                   onClick={handleDownloadBrief}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors cursor-pointer group shadow-2xs"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors cursor-pointer group shadow-2xs"
                 >
                   <Download className="w-4 h-4 mr-2 group-hover:translate-y-0.5 transition-transform" />
                   <span>Download Case Study Brief</span>
@@ -455,9 +455,9 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
       {/* ========================================================
           2. CATEGORY FILTER BAR: Horizontal Pills
           ======================================================== */}
-      <section className="py-6 sm:py-8 bg-white">
+      <section className="py-5 sm:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-start gap-2.5 sm:gap-3">
+          <div className="flex overflow-x-auto sm:flex-wrap items-center justify-start gap-2 sm:gap-3 pb-2 sm:pb-0 scrollbar-none" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
             {CATEGORIES.map((cat) => {
               const IconComp = cat.icon;
               const isActive = selectedFilter === cat.id;
@@ -575,14 +575,14 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
           ======================================================== */}
       <section className="py-6 sm:py-8 bg-white border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-6 shadow-2xs">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+          <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-2xs">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-0 divide-y-0 sm:divide-x divide-slate-100">
               {STATS_ITEMS.map((item, idx) => {
                 const IconComp = item.icon;
                 return (
                   <div
                     key={idx}
-                    className={`flex items-start space-x-3.5 text-left py-2.5 sm:py-1 ${
+                    className={`flex items-start space-x-2.5 sm:space-x-3.5 text-left py-2 sm:py-1 ${
                       idx === 0
                         ? "sm:pr-6"
                         : idx === STATS_ITEMS.length - 1
@@ -592,14 +592,14 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
                   >
                     {/* Clean Dark Navy / Blue Outline Icon */}
                     <div className="text-[#0A2540] shrink-0 mt-0.5">
-                      <IconComp className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.65]" />
+                      <IconComp className="w-7 h-7 sm:w-9 sm:h-9 stroke-[1.65]" />
                     </div>
 
                     <div className="space-y-0.5">
-                      <h3 className="text-lg sm:text-[19px] font-extrabold text-[#0A2540] leading-snug">
+                      <h3 className="text-base sm:text-[19px] font-extrabold text-[#0A2540] leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-[13px] text-slate-500 font-medium whitespace-pre-line leading-snug">
+                      <p className="text-[11px] sm:text-[13px] text-slate-500 font-medium whitespace-pre-line leading-snug">
                         {item.subtitle}
                       </p>
                     </div>
@@ -704,10 +704,10 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
               </div>
 
               {/* Action Buttons: Let's Talk & Chat on WhatsApp */}
-              <div className="relative z-10 flex flex-wrap items-center gap-3 pt-6">
+              <div className="relative z-10 flex flex-col xs:flex-row items-stretch xs:items-center gap-3 pt-6">
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#E31E24] text-white font-bold text-xs sm:text-sm shadow-md hover:bg-[#C8171D] transition-colors cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#E31E24] text-white font-bold text-xs sm:text-sm shadow-md hover:bg-[#C8171D] transition-colors cursor-pointer group"
                 >
                   <span>Let's Talk</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
@@ -717,7 +717,7 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenConsultation }) 
                   href="https://wa.me/918935800557?text=Hi%20Sanjay,%20I%20would%20like%20to%20discuss%20a%20case%20study%20and%20business%20growth%20consultation."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-sm shadow-md hover:bg-[#20BD5A] transition-colors cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-sm shadow-md hover:bg-[#20BD5A] transition-colors cursor-pointer group"
                 >
                   <MessageCircle className="w-4 h-4 mr-2 fill-current" />
                   <span>Chat on WhatsApp</span>

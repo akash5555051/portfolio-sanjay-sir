@@ -125,12 +125,12 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
+    <div className="pt-24 sm:pt-28 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
           1. HERO SECTION: 1:1 Match to Mockup Design
           ======================================================== */}
-      <section className="relative overflow-hidden bg-white pt-6 pb-8 sm:pt-10 sm:pb-12 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-white pt-4 pb-8 sm:pt-8 sm:pb-12 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
             
@@ -142,7 +142,7 @@ export const Contact: React.FC = () => {
               </span>
 
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
                 Let’s Create <br />
                 Something Meaningful <br />
                 <span className="text-[#E31E24]">for Your Business</span>
@@ -154,11 +154,11 @@ export const Contact: React.FC = () => {
               </p>
 
               {/* 3 Value Propositions / Trust Pills */}
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-1 text-slate-700">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-6 pt-1 text-slate-700">
                 {/* 1. Quick Response */}
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-[#E31E24] shrink-0">
-                    <MessageSquare className="w-4 h-4 stroke-[2]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-red-50 flex items-center justify-center text-[#E31E24] shrink-0">
+                    <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
                   </div>
                   <span className="text-xs sm:text-sm font-bold text-[#0A2540]">
                     Quick Response
@@ -167,8 +167,8 @@ export const Contact: React.FC = () => {
 
                 {/* 2. Confidential Discussions */}
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-[#1677FF] shrink-0">
-                    <Handshake className="w-4 h-4 stroke-[2]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-50 flex items-center justify-center text-[#1677FF] shrink-0">
+                    <Handshake className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
                   </div>
                   <span className="text-xs sm:text-sm font-bold text-[#0A2540]">
                     Confidential Discussions
@@ -177,8 +177,8 @@ export const Contact: React.FC = () => {
 
                 {/* 3. Solution Focused */}
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-[#E31E24] shrink-0">
-                    <Target className="w-4 h-4 stroke-[2]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-red-50 flex items-center justify-center text-[#E31E24] shrink-0">
+                    <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
                   </div>
                   <span className="text-xs sm:text-sm font-bold text-[#0A2540]">
                     Solution Focused

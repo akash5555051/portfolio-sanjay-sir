@@ -58,10 +58,10 @@ export const About: React.FC<AboutProps> = ({ onOpenConsultation }) => {
               </p>
 
               {/* CTA Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="pt-2 flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#E31E24] text-white font-bold text-sm sm:text-base shadow-sm hover:bg-[#C8171D] hover:shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#E31E24] text-white font-bold text-sm sm:text-base shadow-sm hover:bg-[#C8171D] hover:shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
                 >
                   <span>Let's Connect</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" />
@@ -71,7 +71,7 @@ export const About: React.FC<AboutProps> = ({ onOpenConsultation }) => {
                   href={PROFILE_DATA.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-lg bg-white border border-slate-300 text-slate-800 font-bold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 hover:shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-2xs"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-lg bg-white border border-slate-300 text-slate-800 font-bold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 hover:shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-2xs"
                 >
                   <Download className="w-4 h-4 mr-2 text-slate-600" />
                   <span>Download Profile</span>
@@ -107,24 +107,24 @@ export const About: React.FC<AboutProps> = ({ onOpenConsultation }) => {
 
                 {/* 5. Top-Right Handwriting Words: 100% Crisp Vector Google Font Caveat */}
                 <div className="absolute top-3 sm:top-5 right-3 sm:right-6 lg:right-7 z-20 text-right select-none pointer-events-none">
-                  <div className="font-handwriting text-2xl sm:text-[30px] lg:text-[34px] text-slate-800 font-bold leading-[1.12] -rotate-3 drop-shadow-xs">
+                  <div className="font-handwriting text-xl sm:text-[30px] lg:text-[34px] text-slate-800 font-bold leading-[1.12] -rotate-3 drop-shadow-xs">
                     Technology<br />
                     People<br />
                     Business<br />
                     Growth
                   </div>
-                  <svg className="w-24 sm:w-28 h-4 text-[#E31E24] mt-1 ml-auto -rotate-1" viewBox="0 0 100 15" fill="none">
+                  <svg className="w-20 sm:w-28 h-4 text-[#E31E24] mt-1 ml-auto -rotate-1" viewBox="0 0 100 15" fill="none">
                     <path d="M2 10 C 35 2, 70 2, 98 12" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
                   </svg>
                 </div>
 
                 {/* 6. Bottom-Right Dark Navy Quote Card: 100% Crisp HTML Typography */}
-                <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-4 lg:right-6 z-20 max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] bg-[#0A2540] text-white rounded-2xl p-3.5 sm:p-4.5 shadow-2xl border border-slate-700/60 text-left">
-                  <span className="text-2xl sm:text-3xl text-white/70 font-serif leading-none block mb-1">“</span>
-                  <p className="text-[11px] sm:text-xs text-white/95 font-medium leading-relaxed">
+                <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-4 lg:right-6 z-20 max-w-[170px] xs:max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] bg-[#0A2540] text-white rounded-2xl p-3 sm:p-4.5 shadow-2xl border border-slate-700/60 text-left">
+                  <span className="text-xl sm:text-3xl text-white/70 font-serif leading-none block mb-1">“</span>
+                  <p className="text-[10px] xs:text-[11px] sm:text-xs text-white/95 font-medium leading-relaxed">
                     Technology is most powerful when it creates real opportunities for people and businesses.
                   </p>
-                  <div className="mt-2 text-[10px] sm:text-[11px] font-semibold text-white/80 text-right">
+                  <div className="mt-1.5 sm:mt-2 text-[9px] xs:text-[10px] sm:text-[11px] font-semibold text-white/80 text-right">
                     — Sanjay Kumar
                   </div>
                 </div>

@@ -242,12 +242,12 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
     lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
 
   return (
-    <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
+    <div className="pt-24 sm:pt-28 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
           1. HERO SECTION: 1:1 Design Language Match
           ======================================================== */}
-      <section className="relative overflow-hidden bg-white pt-6 pb-8 sm:pt-10 sm:pb-12 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-white pt-4 pb-8 sm:pt-8 sm:pb-12 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
             
@@ -259,7 +259,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
               </span>
 
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
                 Captured Moments in <br />
                 <span className="text-[#E31E24]">Leadership &amp; Growth</span>
               </h1>
@@ -270,22 +270,22 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
               </p>
 
               {/* 4 Value Propositions / Stats Pills */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-1">
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-                  <span className="text-xl sm:text-2xl font-extrabold text-[#0A2540] block">50+</span>
-                  <span className="text-[11px] text-slate-500 font-semibold">Keynotes &amp; Talks</span>
+                  <span className="text-lg sm:text-2xl font-extrabold text-[#0A2540] block">50+</span>
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold">Keynotes &amp; Talks</span>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-                  <span className="text-xl sm:text-2xl font-extrabold text-[#0A2540] block">100+</span>
-                  <span className="text-[11px] text-slate-500 font-semibold">Workshops Led</span>
+                  <span className="text-lg sm:text-2xl font-extrabold text-[#0A2540] block">100+</span>
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold">Workshops Led</span>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-                  <span className="text-xl sm:text-2xl font-extrabold text-[#0A2540] block">20+</span>
-                  <span className="text-[11px] text-slate-500 font-semibold">Summits &amp; Expos</span>
+                  <span className="text-lg sm:text-2xl font-extrabold text-[#0A2540] block">20+</span>
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold">Summits &amp; Expos</span>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-left">
-                  <span className="text-xl sm:text-2xl font-extrabold text-[#0A2540] block">15+</span>
-                  <span className="text-[11px] text-slate-500 font-semibold">Cities Reached</span>
+                  <span className="text-lg sm:text-2xl font-extrabold text-[#0A2540] block">15+</span>
+                  <span className="text-[10px] sm:text-[11px] text-slate-500 font-semibold">Cities Reached</span>
                 </div>
               </div>
             </div>
@@ -307,12 +307,12 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
       {/* ========================================================
           2. FILTER & SEARCH BAR
           ======================================================== */}
-      <section className="py-6 sm:py-8 bg-white border-b border-slate-100">
+      <section className="py-5 sm:py-8 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             
             {/* Category Pills */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <div className="flex overflow-x-auto sm:flex-wrap items-center gap-2 sm:gap-2.5 pb-2 sm:pb-0 scrollbar-none" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
               {CATEGORIES.map((cat) => {
                 const Icon = cat.icon;
                 const isActive = selectedCategory === cat.id;
@@ -607,10 +607,10 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
                 Available for corporate keynote addresses, executive strategy workshops, panel moderations, and on-site business transformation consulting across India and globally.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3.5 pt-4">
+              <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-3.5 pt-4">
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#E31E24] text-white font-bold text-sm shadow-md hover:bg-[#C8171D] transition-colors cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#E31E24] text-white font-bold text-sm shadow-md hover:bg-[#C8171D] transition-colors cursor-pointer group"
                 >
                   <span>Book Keynote / Workshop</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -620,7 +620,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
                   href="https://wa.me/918935800557?text=Hi%20Sanjay,%20I%20would%20like%20to%20discuss%20a%20speaking%20invitation%20or%20executive%20workshop."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm shadow-md hover:bg-[#20BD5A] transition-colors cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm shadow-md hover:bg-[#20BD5A] transition-colors cursor-pointer group"
                 >
                   <MessageCircle className="w-4 h-4 mr-2 fill-current" />
                   <span>Chat on WhatsApp</span>

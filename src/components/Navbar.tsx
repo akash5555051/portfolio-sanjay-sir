@@ -38,19 +38,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           : "bg-white py-3.5 sm:py-4 border-b border-slate-100"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Brand Logo & Subtitle with 4-Color Accent Line */}
-        <Link to="/" className="flex flex-col group text-left">
-          <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#0A2540] group-hover:text-brand-red transition-colors">
+        <Link to="/" className="flex flex-col group text-left min-w-0 pr-2">
+          <span className="text-lg sm:text-2xl font-extrabold tracking-tight text-[#0A2540] group-hover:text-[#E31E24] transition-colors truncate">
             {PROFILE_DATA.name}
           </span>
-          <span className="text-[11px] sm:text-xs text-slate-500 font-semibold tracking-wide">
+          <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wide truncate max-w-[190px] sm:max-w-none">
             {PROFILE_DATA.subTitle}
           </span>
           
           {/* 4-Color Horizontal Accent Line */}
-          <div className="flex items-center h-1 w-full max-w-[200px] mt-1.5 rounded-full overflow-hidden">
+          <div className="flex items-center h-1 w-28 sm:w-44 mt-1 rounded-full overflow-hidden shrink-0">
             <span className="h-full w-1/4 bg-[#E31E24]" />
             <span className="h-full w-1/4 bg-[#22C55E]" />
             <span className="h-full w-1/4 bg-[#1677FF]" />
@@ -97,18 +97,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           </button>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex items-center space-x-2 lg:hidden">
+        {/* Mobile Action Buttons (Phone + Hamburger) */}
+        <div className="flex items-center space-x-1.5 sm:space-x-2 lg:hidden shrink-0">
           <button
             onClick={onOpenConsultation}
-            className="sm:hidden inline-flex items-center justify-center p-2 rounded-full bg-[#E31E24] text-white shadow-sm"
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#E31E24] text-white shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer"
             aria-label="Let's Talk"
           >
             <PhoneCall className="w-4 h-4" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
             aria-label="Toggle Menu"
             aria-expanded={mobileMenuOpen}
           >

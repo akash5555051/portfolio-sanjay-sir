@@ -45,7 +45,7 @@ function MainLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-[#E31E24] selection:text-white antialiased">
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-[#E31E24] selection:text-white antialiased overflow-x-hidden w-full">
       {/* Fixed Header (hidden on /admin) */}
       {!isAdmin && <Navbar onOpenConsultation={handleOpenConsultation} />}
 

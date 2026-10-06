@@ -405,12 +405,12 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
   };
 
   return (
-    <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
+    <div className="pt-24 sm:pt-28 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
           1. HERO SECTION: 1:1 Match to Mockup Design
           ======================================================== */}
-      <section className="relative overflow-hidden bg-white pt-6 pb-8 sm:pt-10 sm:pb-12 border-b border-slate-100">
+      <section className="relative overflow-hidden bg-white pt-4 pb-8 sm:pt-8 sm:pb-12 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
             
@@ -422,7 +422,7 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
               </span>
 
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0A2540] tracking-tight leading-[1.12] mb-5">
                 Practical Insights <br />
                 <span className="text-[#E31E24]">for a Smarter Tomorrow</span>
               </h1>
@@ -433,10 +433,10 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5">
+              <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
                 <button
                   onClick={scrollToArticles}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#E31E24] text-white font-bold text-sm shadow-sm hover:bg-[#C8171D] transition-colors cursor-pointer group"
                 >
                   <span>Explore Articles</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -447,7 +447,7 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
                     const el = document.getElementById("newsletter-section");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors cursor-pointer group shadow-2xs"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-[#0A2540] font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-colors cursor-pointer group shadow-2xs"
                 >
                   <Bell className="w-4 h-4 mr-2 text-slate-600" />
                   <span>Get Updates</span>
@@ -472,12 +472,12 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
       {/* ========================================================
           2. CATEGORY FILTER & SEARCH BAR
           ======================================================== */}
-      <section className="py-6 sm:py-8 bg-white">
+      <section className="py-5 sm:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
             
             {/* Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <div className="flex overflow-x-auto sm:flex-wrap items-center gap-2 sm:gap-2.5 pb-2 sm:pb-0 scrollbar-none" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
               {CATEGORIES_FILTER.map((cat) => {
                 const IconComp = cat.icon;
                 const isActive = selectedCategory === cat.id;
@@ -757,18 +757,18 @@ export const Insights: React.FC<InsightsProps> = ({ onOpenConsultation }) => {
             {/* Middle: Email Form */}
             <div className="w-full lg:max-w-md">
               <form onSubmit={handleSubscribe} className="space-y-1.5">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2">
                   <input
                     type="email"
                     required
                     value={subscriberEmail}
                     onChange={(e) => setSubscriberEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="flex-1 px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all shadow-2xs"
+                    className="flex-1 w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31E24] focus:border-transparent transition-all shadow-2xs"
                   />
                   <button
                     type="submit"
-                    className="px-5 py-2.5 bg-[#E31E24] text-white rounded-xl font-bold text-xs sm:text-sm hover:bg-[#C8171D] transition-colors cursor-pointer shrink-0 shadow-xs inline-flex items-center gap-1.5"
+                    className="w-full xs:w-auto px-5 py-2.5 bg-[#E31E24] text-white rounded-xl font-bold text-xs sm:text-sm hover:bg-[#C8171D] transition-colors cursor-pointer shrink-0 shadow-xs inline-flex items-center justify-center gap-1.5"
                   >
                     <span>Subscribe</span>
                     <ArrowRight className="w-3.5 h-3.5" />

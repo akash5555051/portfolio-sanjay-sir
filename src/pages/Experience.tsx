@@ -200,7 +200,7 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
   };
 
   return (
-    <div className="pt-20 sm:pt-24 pb-16 bg-white min-h-screen text-slate-800">
+    <div className="pt-24 sm:pt-28 pb-16 bg-white min-h-screen text-slate-800">
 
       {/* ========================================================
           1. HERO SECTION: 1:1 Unified Master Banner (Zero Gap / Exactly as in Mockup)
@@ -250,15 +250,15 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
       {/* ========================================================
           2. HIGHLIGHTS & STATS BAR: Clean 4 Columns with Dividers
           ======================================================== */}
-      <section className="bg-white border-y border-slate-200/80 py-7">
+      <section className="bg-white border-y border-slate-200/80 py-5 sm:py-7">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-0 divide-y-0 sm:divide-x divide-slate-100">
             {METRIC_HIGHLIGHTS.map((metric, idx) => {
               const IconComp = metric.icon;
               return (
                 <div
                   key={idx}
-                  className={`flex items-start space-x-3.5 text-left py-2.5 sm:py-1 ${
+                  className={`flex items-start space-x-2.5 sm:space-x-3.5 text-left py-2 sm:py-1 ${
                     idx === 0
                       ? "sm:pr-6"
                       : idx === METRIC_HIGHLIGHTS.length - 1
@@ -268,15 +268,15 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenConsultation }) =>
                 >
                   {/* Clean Dark Navy Outline Icon */}
                   <div className="text-[#0A2540] shrink-0 mt-0.5">
-                    <IconComp className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.65]" />
+                    <IconComp className="w-7 h-7 sm:w-9 sm:h-9 stroke-[1.65]" />
                   </div>
 
                   {/* Title & Subtitle */}
                   <div className="space-y-0.5">
-                    <h3 className="text-lg sm:text-[19px] font-extrabold text-[#0A2540] leading-snug">
+                    <h3 className="text-base sm:text-[19px] font-extrabold text-[#0A2540] leading-snug">
                       {metric.title}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-slate-500 font-medium whitespace-pre-line leading-snug">
+                    <p className="text-[11px] sm:text-[13px] text-slate-500 font-medium whitespace-pre-line leading-snug">
                       {metric.subtitle}
                     </p>
                   </div>

@@ -123,11 +123,11 @@ INDUSTRIES:
               </p>
 
               {/* Action Buttons Row */}
-              <div className="pt-3 flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="pt-3 flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
                 {/* Discuss Your Requirements */}
                 <button
                   onClick={onOpenConsultation}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#E31E24] text-white font-bold text-sm sm:text-base shadow-sm hover:bg-[#C8171D] hover:shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#E31E24] text-white font-bold text-sm sm:text-base shadow-sm hover:bg-[#C8171D] hover:shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
                 >
                   <span>Discuss Your Requirements</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" />
@@ -136,7 +136,7 @@ INDUSTRIES:
                 {/* Download Expertise Overview */}
                 <button
                   onClick={handleDownloadOverview}
-                  className="inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-lg bg-white border border-slate-300 text-slate-800 font-bold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 hover:shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-2xs cursor-pointer group"
+                  className="w-full xs:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-lg bg-white border border-slate-300 text-slate-800 font-bold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-400 hover:shadow-xs transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-2xs cursor-pointer group"
                 >
                   <Download className="w-4 h-4 mr-2 text-slate-700 group-hover:translate-y-0.5 transition-transform" />
                   <span>Download Expertise Overview</span>
@@ -172,24 +172,24 @@ INDUSTRIES:
 
                 {/* Top-Right Handwriting Words: Ideas Strategy Technology Growth */}
                 <div className="absolute top-3 sm:top-5 right-3 sm:right-6 lg:right-7 z-20 text-right select-none pointer-events-none">
-                  <div className="font-handwriting text-2xl sm:text-[32px] lg:text-[36px] text-slate-800 font-bold leading-[1.12] -rotate-3 drop-shadow-xs">
+                  <div className="font-handwriting text-xl sm:text-[32px] lg:text-[36px] text-slate-800 font-bold leading-[1.12] -rotate-3 drop-shadow-xs">
                     Ideas<br />
                     Strategy<br />
                     Technology<br />
                     Growth
                   </div>
-                  <svg className="w-22 sm:w-28 h-4 text-[#E31E24] mt-1 ml-auto -rotate-1" viewBox="0 0 100 15" fill="none">
+                  <svg className="w-20 sm:w-28 h-4 text-[#E31E24] mt-1 ml-auto -rotate-1" viewBox="0 0 100 15" fill="none">
                     <path d="M2 10 C 35 2, 70 2, 98 12" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
                   </svg>
                 </div>
 
                 {/* Bottom-Right Dark Navy Quote Card */}
-                <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-4 lg:right-6 z-20 max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] bg-[#0A2540] text-white rounded-2xl p-3.5 sm:p-4.5 shadow-2xl border border-slate-700/60 text-left">
-                  <span className="text-2xl sm:text-3xl text-white/70 font-serif leading-none block mb-1">“</span>
-                  <p className="text-[11px] sm:text-xs text-white/95 font-medium leading-relaxed">
+                <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-4 lg:right-6 z-20 max-w-[170px] xs:max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] bg-[#0A2540] text-white rounded-2xl p-3 sm:p-4.5 shadow-2xl border border-slate-700/60 text-left">
+                  <span className="text-xl sm:text-3xl text-white/70 font-serif leading-none block mb-1">“</span>
+                  <p className="text-[10px] xs:text-[11px] sm:text-xs text-white/95 font-medium leading-relaxed">
                     I don't just recommend solutions, I help you implement them.
                   </p>
-                  <div className="mt-2 text-[10px] sm:text-[11px] font-semibold text-white/80 text-right">
+                  <div className="mt-1.5 sm:mt-2 text-[9px] xs:text-[10px] sm:text-[11px] font-semibold text-white/80 text-right">
                     — Sanjay Kumar
                   </div>
                 </div>
