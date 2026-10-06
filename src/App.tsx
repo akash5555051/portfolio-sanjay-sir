@@ -14,6 +14,7 @@ import { CaseStudies } from "@/pages/CaseStudies";
 import { Insights } from "@/pages/Insights";
 import { Gallery } from "@/pages/Gallery";
 import { Contact } from "@/pages/Contact";
+import { Admin } from "@/pages/Admin";
 import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsOfUse } from "@/pages/TermsOfUse";
 
@@ -30,8 +31,10 @@ function ScrollToTop() {
   return null;
 }
 
-export function App() {
+function MainLayout() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const location = useLocation();
+  const isAdmin = location.pathname === "/admin";
 
   const handleOpenConsultation = () => {
     setIsConsultationOpen(true);
@@ -42,41 +45,48 @@ export function App() {
   };
 
   return (
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-[#E31E24] selection:text-white antialiased">
+      {/* Fixed Header (hidden on /admin) */}
+      {!isAdmin && <Navbar onOpenConsultation={handleOpenConsultation} />}
+
+      {/* Dynamic Route Content */}
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/about" element={<About onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/expertise" element={<Expertise onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/experience" element={<Experience onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/case-studies" element={<CaseStudies onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/insights" element={<Insights onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/gallery" element={<Gallery onOpenConsultation={handleOpenConsultation} />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="*" element={<Home onOpenConsultation={handleOpenConsultation} />} />
+        </Routes>
+      </main>
+
+      {/* Global Footer (hidden on /admin) */}
+      {!isAdmin && <Footer />}
+
+      {/* Global Consultation Modal */}
+      <ConsultationModal
+        isOpen={isConsultationOpen}
+        onClose={handleCloseConsultation}
+      />
+
+      {/* Floating WhatsApp Action Button (hidden on /admin) */}
+      {!isAdmin && <FloatingWhatsApp />}
+    </div>
+  );
+}
+
+export function App() {
+  return (
     <HashRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-[#E31E24] selection:text-white antialiased">
-        {/* Fixed Header */}
-        <Navbar onOpenConsultation={handleOpenConsultation} />
-
-        {/* Dynamic Route Content */}
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/about" element={<About onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/expertise" element={<Expertise onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/experience" element={<Experience onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/case-studies" element={<CaseStudies onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/insights" element={<Insights onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/gallery" element={<Gallery onOpenConsultation={handleOpenConsultation} />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-use" element={<TermsOfUse />} />
-            <Route path="*" element={<Home onOpenConsultation={handleOpenConsultation} />} />
-          </Routes>
-        </main>
-
-        {/* Global Footer */}
-        <Footer />
-
-        {/* Global Consultation Modal */}
-        <ConsultationModal
-          isOpen={isConsultationOpen}
-          onClose={handleCloseConsultation}
-        />
-
-        {/* Floating WhatsApp Action Button */}
-        <FloatingWhatsApp />
-      </div>
+      <MainLayout />
     </HashRouter>
   );
 }

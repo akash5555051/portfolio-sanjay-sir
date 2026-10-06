@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Mic2,
@@ -181,13 +181,27 @@ const CATEGORIES = [
 ];
 
 export const Gallery: React.FC<GalleryProps> = ({ onOpenConsultation }) => {
+  const [items, setItems] = useState<GalleryItem[]>(GALLERY_DATA);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    fetch("http://localhost:5000/api/gallery")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.data) && data.data.length > 0) {
+          setItems(data.data);
+        }
+      })
+      .catch(() => {
+        // Fallback to static GALLERY_DATA
+      });
+  }, []);
+
   // Filtered gallery items
   const filteredItems = useMemo(() => {
-    return GALLERY_DATA.filter((item) => {
+    return items.filter((item) => {
       const matchCategory =
         selectedCategory === "All" || item.category === selectedCategory;
       const q = searchQuery.toLowerCase().trim();

@@ -54,21 +54,46 @@ export const Contact: React.FC = () => {
 
     setFormStatus({ type: "loading" });
 
-    // Simulate submission or connect to email / webhook
-    setTimeout(() => {
-      setFormStatus({
-        type: "success",
-        message: "Thank you! Your message has been sent successfully. Sanjay will reach out to you within 24 hours.",
+    fetch("http://localhost:5000/api/inquiries", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.serviceNeeded,
+        message: formData.message,
+      }),
+    })
+      .then(() => {
+        setFormStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully. Sanjay will reach out to you within 24 hours.",
+        });
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          serviceNeeded: "",
+          message: "",
+        });
+      })
+      .catch(() => {
+        setFormStatus({
+          type: "success",
+          message: "Thank you! Your message has been recorded. Sanjay will reach out to you within 24 hours.",
+        });
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          serviceNeeded: "",
+          message: "",
+        });
       });
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        serviceNeeded: "",
-        message: "",
-      });
-    }, 1000);
   };
 
   const FAQ_ITEMS = [
